@@ -18,6 +18,7 @@ public class MyFirstController extends HttpServlet {
      * @see HttpServlet#HttpServlet()
      */
     public MyFirstController() {
+        super();
         // TODO Auto-generated constructor stub
     }
 
