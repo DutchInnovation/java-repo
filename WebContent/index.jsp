@@ -8,13 +8,14 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%! int i = 0;%>
-<%= i %> <%--DAB --%>
-<%! int day = 3; %>
-<% if (day == 1 || day == 7) { %>
-Today is weekend
-<% } else { %>
-Today is not weekend
-<% } %>
-</body>
+
+<%@ include file="WEB-INF/jspf/head.jspf"%>
+<%@ include file="WEB-INF/jspf/nav.jspf"%>
+<%@ include file="WEB-INF/jspf/foot.jspf"%>
+
+<%@ include file="WEB-INF/jspf/head.jspf"%>
+<%@ include file="WEB-INF/jspf/foot.jspf"%>
+
+
+
 </html>
