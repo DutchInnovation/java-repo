@@ -1,5 +1,5 @@
 <h1>What's your name?</h1>
-<form action="/bedankts.jsp method="POST">
+<form action="/bedankt.jsp method="POST">
 	<input type="text" name="name" placeholder="Typ Hier">
 	<br/>
 	<input type="email" name="email" placeholder="Typ Hier">
