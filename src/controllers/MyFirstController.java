@@ -27,7 +27,7 @@ public class MyFirstController extends HttpServlet {
 	 */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     	 request.setAttribute("cat", "Mimi");
-    	 request.getRequestDispatcher("/WEB-INF/views/myFirstView.jsp").forward(request, response);
+    	 request.getRequestDispatcher("/WEB-INF/views/MyFirstView.jsp").forward(request, response);
     	}
 
 	/**

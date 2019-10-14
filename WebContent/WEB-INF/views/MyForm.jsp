@@ -1,5 +1,5 @@
 <h1>What's your name?</h1>
-<form action="/views/Bedankt.jsp" method="POST">
+<form action="registreer" method="POST">
 	naam:
 	<input type="text" name="name" placeholder="Typ Hier" value="davvvb">
 	<br/>
