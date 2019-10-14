@@ -5,8 +5,4 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>Java WebDevelopment</title>
-<link href="<%=request.getContextPath()%>/dist/css/bootstrap.min.css" rel="stylesheet" />
-<link href="<%=request.getContextPath()%>/dist/css/bootstrap-theme.min.css" rel="stylesheet" />
-<link href="<%=request.getContextPath()%>/css/theme.css" rel="stylesheet" />
-<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.css" />
 </head>
