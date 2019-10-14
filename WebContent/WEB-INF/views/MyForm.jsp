@@ -1,10 +1,13 @@
 <h1>What's your name?</h1>
-<form action="/bedankt.jsp method="POST">
-	<input type="text" name="name" placeholder="Typ Hier">
+<form action="/views/Bedankt.jsp" method="POST">
+	naam:
+	<input type="text" name="name" placeholder="Typ Hier" value="davvvb">
 	<br/>
-	<input type="email" name="email" placeholder="Typ Hier">
+	email:
+	<input type="email" name="email" placeholder="Typ Hier" value ="dabbbb@gmail.com">
 	<br/>
-	<input type="password" name="wachtwoord" placeholder="Typ Hier">
+	wachtwoord:
+	<input type="password" name="wachtwoord" placeholder="Typ Hier" value="nou">
 	<input type="submit" value="Submit">
 </form>
 
