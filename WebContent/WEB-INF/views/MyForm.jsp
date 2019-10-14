@@ -4,3 +4,9 @@
 	<br/>
 	<input type="submit" value="Submit">
 </form>
+
+
+<!-- print in concole -->
+<% System.out.println(request.getParameter("name")); %>
+<!-- print op pagina zelf -->
+<% out.println(request.getParameter("name")); %>
