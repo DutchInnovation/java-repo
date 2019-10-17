@@ -7,9 +7,13 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+naam:
 <% out.println(request.getParameter("name")); %>
+<br>
+email:
 <% out.println(request.getParameter("email")); %>
+<br>
+wachtwoord:
 <% out.println(request.getParameter("wachtwoord")); %>
 
 </body>
