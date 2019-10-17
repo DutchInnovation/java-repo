@@ -27,19 +27,18 @@ public class RegistreerController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.print("GET");
-		//request.getRequestDispatcher("/WEB-INF/views/MyForm.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/views/MyForm.jsp").forward(request, response);
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("Yeet");
-		if (request.getParameter("name")!=null && request.getParameter("wachtwoord")!=null && request.getParameter("email")!=null) {
+		if (!request.getParameter("name").isEmpty() && !request.getParameter("wachtwoord").isEmpty() && !request.getParameter("email").isEmpty()) {
 			request.getRequestDispatcher("/WEB-INF/views/Bedankt.jsp").forward(request, response);
-			System.out.println("het zou goed moetten gaan?");
+			System.out.println("gegevens zijn verstuurd");
 		} else {
-			request.getRequestDispatcher("/WEB-INF/views/Myform.jsp").forward(request, response);
+			request.getRequestDispatcher("/index.jsp").forward(request, response);
 			System.out.println("error één of meerdere velden waren leeg");
 		}
 	}

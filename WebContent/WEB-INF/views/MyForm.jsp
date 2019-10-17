@@ -12,7 +12,7 @@
 </form>
 
 
-<!-- print in concole -->
+<%-- <!-- print in concole -->
 <% System.out.println(request.getParameter("name")); %>
 <!-- print op pagina zelf -->
-<% out.println(request.getParameter("name")); %>
+<% out.println(request.getParameter("name")); %> --%>
