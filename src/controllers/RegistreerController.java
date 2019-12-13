@@ -62,12 +62,12 @@ public class RegistreerController extends HttpServlet {
 					String name = request.getParameter("name");
 					String email = request.getParameter("email");
 					
-					String registreer = "INSERT INTO `users` (`id`, `username`, `password`, `email`) VALUES (NULL, '"+wachtwoord+"', '"+name+"', '"+email+"')";
+					String registreer = "INSERT INTO `users` (`id`, `username`, `password`, `email`) VALUES (NULL, '"+name+"', '"+wachtwoord+"', '"+email+"')";
 				 /*PreparedStatement prepareStatement = connection.prepareStatement(registreer);
 				ResultSet resultSet = prepareStatement.executeQuery();*/
 					Statement statement = connection.createStatement();
 					statement.executeUpdate(registreer);
-				System.out.println("INSERT INTO `users` (`id`, `username`, `password`, `email`) VALUES (NULL, '"+wachtwoord+"', '"+name+"', '"+email+"')");
+				System.out.println("INSERT INTO `users` (`id`, `username`, `password`, `email`) VALUES (NULL, '"+name+"', '"+wachtwoord+"', '"+email+"')");
 				
 				}
 			} catch (SQLException e) {
