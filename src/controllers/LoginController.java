@@ -18,14 +18,14 @@ import util.DBConnection;
 /**
  * Servlet implementation class RegistreerController
  */
-@WebServlet("/registreer")
-public class RegistreerController extends HttpServlet {
+@WebServlet("/login")
+public class LoginController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public RegistreerController() {
+	public LoginController() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
