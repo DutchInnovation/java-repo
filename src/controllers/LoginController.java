@@ -47,37 +47,40 @@ public class LoginController extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		if (!request.getParameter("name").isEmpty() && !request.getParameter("wachtwoord").isEmpty()
-				&& !request.getParameter("email").isEmpty()) {
-			request.getRequestDispatcher("/WEB-INF/views/Bedankt.jsp").forward(request, response);
-			System.out.println("gegevens zijn verstuurd");
+		/*
+		 * request.getRequestDispatcher("/WEB-INF/views/Ingelogd.jsp").forward(request,
+		 * response); System.out.println("gegevens worden verstuurd");
+		 */
 
-			try {
-				Connection connection = DBConnection.getConnection();
-				if (connection != null) {
-					// Debug
-					System.out.println("Connection: " + connection.toString());
-					
-					String wachtwoord = request.getParameter("wachtwoord");
-					String name = request.getParameter("name");
-					String email = request.getParameter("email");
-					
-					String registreer = "INSERT INTO `users` (`id`, `username`, `password`, `email`) VALUES (NULL, '"+wachtwoord+"', '"+name+"', '"+email+"')";
-				 /*PreparedStatement prepareStatement = connection.prepareStatement(registreer);
-				ResultSet resultSet = prepareStatement.executeQuery();*/
-					Statement statement = connection.createStatement();
-					statement.executeUpdate(registreer);
-				System.out.println("INSERT INTO `users` (`id`, `username`, `password`, `email`) VALUES (NULL, '"+wachtwoord+"', '"+name+"', '"+email+"')");
-				
+		try {
+			Connection connection = DBConnection.getConnection();
+			if (connection != null) {
+				// Debug
+				System.out.println("Connection: " + connection.toString());
+
+				String wachtwoord = request.getParameter("wachtwoord");
+				String name = request.getParameter("name");
+
+				String login = "SELECT `password` FROM `users` WHERE `username` = '" + name + "'";
+
+				PreparedStatement prepareStatement = connection.prepareStatement(login);
+				ResultSet resultSet = prepareStatement.executeQuery();
+
+				String wachtwoorddb = null;
+				while (resultSet.next()) {
+					wachtwoorddb = resultSet.getString("wachtwoord");
 				}
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+				if (wachtwoorddb == wachtwoord) {
+					request.getRequestDispatcher("/WEB-INF/views/Ingelogd.jsp").forward(request, response);
+					System.out.println("u word ingelogd");
+				} else {
+					System.out.println("wachtwoord is niet juist");
+				}
 
-		} else {
-			request.getRequestDispatcher("/index.jsp").forward(request, response);
-			System.out.println("error één of meerdere velden waren leeg");
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 	}
 
