@@ -6,4 +6,4 @@
 <p> registreer </p>
 <%@ include file="WEB-INF/views/MyForm.jsp"%>
 <%@ include file="WEB-INF/jspf/foot.jspf"%>
-ja
+:o

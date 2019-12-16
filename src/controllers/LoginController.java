@@ -48,7 +48,7 @@ public class LoginController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
-		 request.getRequestDispatcher("/WEB-INF/views/Ingelogd.jsp").forward(request,
+		 request.getRequestDispatcher("/WEB-INF/Ingelogd.jsp").forward(request,
 		 response);
 		 
 
