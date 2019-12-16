@@ -37,7 +37,7 @@ public class LoginController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		System.out.print("GET");
-		request.getRequestDispatcher("/WEB-INF/views/MyForm.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/views/LoginForm.jsp").forward(request, response);
 
 	}
 
@@ -47,10 +47,6 @@ public class LoginController extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
-		 request.getRequestDispatcher("/WEB-INF/Ingelogd.jsp").forward(request,
-		 response);
-		 
 
 		try {
 			Connection connection = DBConnection.getConnection();
@@ -58,20 +54,22 @@ public class LoginController extends HttpServlet {
 				// Debug
 				System.out.println("Connection: " + connection.toString());
 
-				String wachtwoord = request.getParameter("wachtwoordl");
-				String name = request.getParameter("namel");
+				String wachtwoord = request.getParameter("wachtwoordL");
+				String name = request.getParameter("nameL");
 
 				String login = "SELECT `password` FROM `users` WHERE `username` = '" + name + "'";
 
 				PreparedStatement prepareStatement = connection.prepareStatement(login);
 				ResultSet resultSet = prepareStatement.executeQuery();
 
-				String wachtwoorddb = null;
+				String wachtwoorddb = "niks";
 				while (resultSet.next()) {
-					wachtwoorddb = resultSet.getString("wachtwoord");
+					wachtwoorddb = resultSet.getString("password");
 				}
-				if (wachtwoorddb == wachtwoord && wachtwoord != "") {
+				if (wachtwoorddb.equals(wachtwoord) && wachtwoorddb != null) {
 					System.out.println("u word ingelogd");
+					 request.getRequestDispatcher("/Ingelogd.jsp").forward(request,
+							 response);
 				} else {
 					System.out.println("wachtwoord is niet juist");
 					request.getRequestDispatcher("/index.jsp").forward(request, response);
