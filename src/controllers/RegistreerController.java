@@ -49,7 +49,7 @@ public class RegistreerController extends HttpServlet {
 			throws ServletException, IOException {
 		if (!request.getParameter("name").isEmpty() && !request.getParameter("wachtwoord").isEmpty()
 				&& !request.getParameter("email").isEmpty()) {
-			request.getRequestDispatcher("/WEB-INF/views/Bedankt.jsp").forward(request, response);
+			request.getRequestDispatcher("/index.jsp").forward(request, response);
 			System.out.println("gegevens zijn verstuurd");
 
 			try {
